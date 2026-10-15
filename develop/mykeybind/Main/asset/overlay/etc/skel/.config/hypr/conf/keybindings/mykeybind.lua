@@ -166,13 +166,14 @@ hl.bind("ALT + F1", hl.dsp.exec_cmd("nwg-drawer -mb 10 -mr 10 -ml 10 -mt 10"))
 -- hl.bind("ALT + F2", hl.dsp.exec_cmd("pkill wofi || wofi --normal-window --show drun --allow-images"))
 -- hl.bind("ALT + F2", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"))
 
+
+
 -- Open application launcher
 hl.bind("ALT + F2", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-launcher"))
 
 -- Show keybindings
 hl.bind("ALT + F3", hl.dsp.exec_cmd("~/.config/hypr/scripts/keybindings.sh"))
-hl.bind("Alt + /", hl.dsp.exec_cmd("~/.config/hypr/scripts/keybindings.sh"))
-hl.bind("SUPER + c", hl.dsp.exec_cmd("~/.config/hypr/scripts/keybindings.sh"))
+
 
 
 
@@ -215,8 +216,10 @@ hl.bind("ALT + CTRL + c", hl.dsp.exec_cmd("hyprctl reload"))
 
 
 -- Logout
-hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("ml4w-powermenu toggle"))
---hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("wlogout"))
+hl.bind("SUPER + SHIFT + x", hl.dsp.exec_cmd("ml4w-powermenu toggle"))
+hl.bind("SUPER + CTRL + x", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+
+hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("wlogout"))
 hl.bind("ALT + CTRL + x", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
 

@@ -442,4 +442,3 @@ hl.bind("SUPER + Tab", hl.dsp.exec_cmd("qs -p ~/.local/share/quickshell-overview
 
 -- Open theme switcher
 hl.bind("SUPER + CTRL + s" , hl.dsp.exec_cmd("~/.config/ml4w/themes/themes.sh"))
-
