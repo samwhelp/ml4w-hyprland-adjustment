@@ -101,7 +101,7 @@ hl.bind("ALT + CTRL + t", hl.dsp.exec_cmd("kitty"))
 
 hl.bind("ALT + SHIFT + f", hl.dsp.exec_cmd("~/.config/ml4w/settings/filemanager"))
 
---hl.bind("ALT + SHIFT + f", hl.dsp.exec_cmd("thunar"))
+-- hl.bind("ALT + SHIFT + f", hl.dsp.exec_cmd("thunar"))
 hl.bind("ALT + SHIFT + g", hl.dsp.exec_cmd("pcmanfm"))
 
 
