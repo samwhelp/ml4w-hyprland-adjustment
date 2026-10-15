@@ -208,7 +208,8 @@ hl.bind("ALT + CTRL + c", hl.dsp.exec_cmd("hyprctl reload"))
 
 
 -- Logout
-hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("wlogout"))
+hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("ml4w-powermenu toggle"))
+--hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("wlogout"))
 hl.bind("ALT + CTRL + x", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
 
