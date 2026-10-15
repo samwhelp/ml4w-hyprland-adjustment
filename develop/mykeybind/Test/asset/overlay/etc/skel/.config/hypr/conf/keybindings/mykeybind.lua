@@ -475,4 +475,3 @@ hl.bind("ALT + PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"))
 hl.bind("CTRL + PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh --instant-area"))
 
 hl.bind("ALT + SUPER + PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/text-extractor.sh"))
-
