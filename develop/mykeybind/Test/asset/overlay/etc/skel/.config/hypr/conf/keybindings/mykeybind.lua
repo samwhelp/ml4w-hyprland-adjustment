@@ -100,9 +100,10 @@ hl.bind("ALT + CTRL + t", hl.dsp.exec_cmd("kitty"))
 --------------------------------------------------------------------------------
 
 hl.bind("ALT + SHIFT + f", hl.dsp.exec_cmd("~/.config/ml4w/settings/filemanager"))
+hl.bind("ALT + SHIFT + g", hl.dsp.exec_cmd("thunar"))
 
 -- hl.bind("ALT + SHIFT + f", hl.dsp.exec_cmd("thunar"))
-hl.bind("ALT + SHIFT + g", hl.dsp.exec_cmd("pcmanfm"))
+-- hl.bind("ALT + SHIFT + g", hl.dsp.exec_cmd("pcmanfm"))
 
 
 
@@ -111,7 +112,9 @@ hl.bind("ALT + SHIFT + g", hl.dsp.exec_cmd("pcmanfm"))
 -- ## Keybindings / Keybind / Application / Text Editor
 --------------------------------------------------------------------------------
 
-hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("mousepad"))
+hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("~/.config/ml4w/settings/editor.sh"))
+
+-- hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("mousepad"))
 -- hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("featherpad"))
 -- hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("geany"))
 -- hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("subl"))
@@ -144,8 +147,8 @@ hl.bind("ALT + SHIFT + s", hl.dsp.exec_cmd("nwg-look"))
 --------------------------------------------------------------------------------
 
 -- hl.bind("ALT + SHIFT + v", hl.dsp.exec_cmd("mate-volume-control"))
--- hl.bind("ALT + SHIFT + v", hl.dsp.exec_cmd("pavucontrol"))
-hl.bind("ALT + SHIFT + v", hl.dsp.exec_cmd("pavucontrol-qt"))
+hl.bind("ALT + SHIFT + v", hl.dsp.exec_cmd("pavucontrol"))
+-- hl.bind("ALT + SHIFT + v", hl.dsp.exec_cmd("pavucontrol-qt"))
 
 
 
@@ -219,7 +222,8 @@ hl.bind("ALT + CTRL + c", hl.dsp.exec_cmd("hyprctl reload"))
 hl.bind("SUPER + SHIFT + x", hl.dsp.exec_cmd("ml4w-powermenu toggle"))
 hl.bind("SUPER + CTRL + x", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
-hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("wlogout"))
+hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("ml4w-powermenu toggle"))
+-- hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("wlogout"))
 hl.bind("ALT + CTRL + x", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
 
@@ -441,4 +445,34 @@ hl.bind("SUPER + SHIFT + n", hl.dsp.exec_cmd("qs ipc call calendar toggle"))
 hl.bind("SUPER + Tab", hl.dsp.exec_cmd("qs -p ~/.local/share/quickshell-overview ipc call overview toggle"))
 
 -- Open theme switcher
-hl.bind("SUPER + CTRL + s" , hl.dsp.exec_cmd("~/.config/ml4w/themes/themes.sh"))
+hl.bind("SUPER + SHIFT + s" , hl.dsp.exec_cmd("~/.config/waybar/themeswitcher.sh"))
+
+hl.bind("SUPER + SHIFT + t" , hl.dsp.exec_cmd("~/.config/ml4w/themes/themes.sh"))
+hl.bind("SUPER + CTRL + t" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-toggle-theme"))
+
+
+-- Open clipboard manager
+hl.bind("SUPER + SHIFT + p" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-cliphist"))
+
+
+--------------------------------------------------------------------------------
+-- ## Keybindings / Keybind / Wallpaper
+--------------------------------------------------------------------------------
+
+hl.bind("ALT + w" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-app --random"))
+hl.bind("ALT + CTRL + w" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-app"))
+hl.bind("SUPER + CTRL + w" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-automation"))
+
+
+
+
+--------------------------------------------------------------------------------
+-- ## Keybindings / Keybind / Screenshot
+--------------------------------------------------------------------------------
+
+hl.bind("PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh --instant"))
+hl.bind("ALT + PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"))
+hl.bind("CTRL + PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh --instant-area"))
+
+hl.bind("ALT + SUPER + PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/text-extractor.sh"))
+
