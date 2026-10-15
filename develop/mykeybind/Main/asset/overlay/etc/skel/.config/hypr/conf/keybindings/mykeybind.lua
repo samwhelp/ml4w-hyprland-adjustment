@@ -164,8 +164,15 @@ hl.bind("ALT + SHIFT + n", hl.dsp.exec_cmd("kitty --class 'nmtui' --title 'Netwo
 
 hl.bind("ALT + F1", hl.dsp.exec_cmd("nwg-drawer -mb 10 -mr 10 -ml 10 -mt 10"))
 -- hl.bind("ALT + F2", hl.dsp.exec_cmd("pkill wofi || wofi --normal-window --show drun --allow-images"))
-hl.bind("ALT + F2", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"))
+-- hl.bind("ALT + F2", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"))
 
+-- Open application launcher
+hl.bind("ALT + F2", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-launcher"))
+
+-- Show keybindings
+hl.bind("ALT + F3", hl.dsp.exec_cmd("~/.config/hypr/scripts/keybindings.sh"))
+hl.bind("Alt + /", hl.dsp.exec_cmd("~/.config/hypr/scripts/keybindings.sh"))
+hl.bind("SUPER + c", hl.dsp.exec_cmd("~/.config/hypr/scripts/keybindings.sh"))
 
 
 
@@ -426,3 +433,9 @@ hl.bind("SUPER + SHIFT + m", hl.dsp.exec_cmd("qs ipc call sidebar toggle"))
 
 -- Open ML4W Calendar widget
 hl.bind("SUPER + SHIFT + n", hl.dsp.exec_cmd("qs ipc call calendar toggle"))
+
+-- Open Select Window Menu
+hl.bind("SUPER + Tab", hl.dsp.exec_cmd("qs -p ~/.local/share/quickshell-overview ipc call overview toggle"))
+
+-- Open theme switcher
+hl.bind("SUPER + CTRL + s" , hl.dsp.exec_cmd("~/.config/ml4w/themes/themes.sh"))
