@@ -35,23 +35,24 @@
 -- hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 
--- Move window with `Super + [Left Mouse Button Drag]`
-hl.bind("SUPER + mouse:272", hl.dsp.window.drag(),   { mouse = true })
+-- Move window with `Super + [Mouse Left Button Drag]`
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(),   { mouse = true, description = "move window" })
 
--- Move window with `Super + [Right Mouse Button Drag]`
-hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
-
-
--- Toggle floating of window with `Super + [Middle Mouse Button Click]`
-hl.bind("SUPER + mouse:274", hl.dsp.window.float({ action = "toggle" }), { mouse = true })
-
--- Toggle floating of window with `ALT + [Middle Mouse Button Click]`
-hl.bind("ALT + mouse:274", hl.dsp.window.float({ action = "toggle" }), { mouse = true })
+-- Move window with `Super + [Mouse Right Button Drag]`
+hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true, description = "resize window" })
 
 
--- Switch workspace with `Super + [Middle Mouse Button Scroll]`
-hl.bind("SUPER + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
-hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+-- Toggle floating of window with `Super + [Mouse Middle Button Click]`
+hl.bind("SUPER + mouse:274", hl.dsp.window.float({ action = "toggle" }), { mouse = true, description = "toggle floating for active window" })
+
+-- Toggle floating of all window with `ALT + [Mouse Middle Button Click]`
+hl.bind("ALT + mouse:274", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-toggle-allfloat"), { mouse = true, description = "toggle floating for all windows of workspace" })
+
+
+
+-- Switch workspace with `Super + [Mouse Middle Button Scroll]`
+hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e-1" }), { mouse = true, description = "switch previous workspace" })
+hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }), { mouse = true, description = "switch next workspace" })
 
 
 
@@ -258,6 +259,7 @@ hl.bind("SUPER + w", hl.dsp.window.fullscreen({ mode = "maximized", action = "to
 
 -- Window Toggle Floating
 hl.bind("SUPER + Escape", hl.dsp.window.float({ action = "toggle" }), { description = "window toggle floating" })
+hl.bind("ALT + Escape", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-toggle-allfloat"), { description = "toggle floating for all windows of workspace" })
 
 -- Window Move Center
 hl.bind("SUPER + m", hl.dsp.window.center(), { description = "window move to screen center" })
@@ -322,19 +324,19 @@ end, { description = "focus master window" })
 hl.bind("SUPER + SHIFT + a", function()
 	hl.dispatch(hl.dsp.layout("swapprev"))
 	hl.dispatch(hl.dsp.window.bring_to_top())
-end)
+end, { description = "swap with previous window" })
 
 hl.bind("SUPER + SHIFT + s", function()
 	hl.dispatch(hl.dsp.layout("swapnext"))
 	hl.dispatch(hl.dsp.window.bring_to_top())
-end)
+end, { description = "swap with next window" })
 
 
 -- Swap master window on layout master
 hl.bind("SUPER + SHIFT + c", function()
 	hl.dispatnch(hl.dsp.layout("swapwithmaster"))
 	hl.dispatch(hl.dsp.window.bring_to_top())
-end)
+end, { description = "swap with master window" })
 
 
 -- Swap window on layout master with `Super +[grave,Tab]`
@@ -370,19 +372,19 @@ end)
 --------------------------------------------------------------------------------
 
 -- Switch workspaces with `Alt + [a,s]`
-hl.bind("ALT + a",   hl.dsp.focus({ workspace = "e-1" }))
-hl.bind("ALT + s", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind("ALT + a",   hl.dsp.focus({ workspace = "e-1" }), { description = "switch to preivous workspace" })
+hl.bind("ALT + s", hl.dsp.focus({ workspace = "e+1" }), { description = "switch to preivous workspace" })
 
 -- Switch previous workspaces with `Alt + z`
-hl.bind("ALT + z", hl.dsp.focus({ workspace = "previous" }))
+hl.bind("ALT + z", hl.dsp.focus({ workspace = "previous" }), { description = "switch to period workspace" })
 
 
 -- Switch worksapce with `Alt + CTRL + [0-9]`
 -- Move active window to a workspace with `ALT + SHIFT + [0-9]`
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
-	hl.bind("ALT + CTRL + " .. key, hl.dsp.focus({ workspace = i}))
-	hl.bind("ALT + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	hl.bind("ALT + CTRL + " .. key, hl.dsp.focus({ workspace = i}), { description = "switch to workspace" })
+	hl.bind("ALT + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }), { description = "move window workspace" })
 end
 
 
@@ -390,43 +392,33 @@ end
 -- Move active window to a workspace with `SUPER + SHIFT + [0-9]`
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
-	hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = i}))
-	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = i}), { description = "switch to workspace" })
+	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }), { description = "mosve window workspace" })
 end
 
 
 
 
 --------------------------------------------------------------------------------
--- ## Keybindings / Keybind / Brightness
+-- ## Keybindings / Keybind / Screenshot
 --------------------------------------------------------------------------------
 
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh --instant"), { description = "screenshot" })
+hl.bind("ALT + PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"), { description = "screenshot panel" })
+hl.bind("CTRL + PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh --instant-area"), { description = "screenshot area" })
 
-
-
-
---------------------------------------------------------------------------------
--- ## Keybindings / Keybind / Volume
---------------------------------------------------------------------------------
-
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true, repeating = true })
+hl.bind("ALT + SUPER + PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/text-extractor.sh"), { description = "extract text from an area" })
 
 
 
 
 --------------------------------------------------------------------------------
--- ## Keybindings / Keybind / Player
+-- ## Keybindings / Keybind / Wallpaper
 --------------------------------------------------------------------------------
 
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+hl.bind("ALT + w" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-app --random"), { description = "change wallpaper" })
+hl.bind("ALT + CTRL + w" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-app"), { description = "select wallpaper" })
+hl.bind("SUPER + CTRL + w" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-automation"), { description = "start wallpaper slide" })
 
 
 
@@ -436,42 +428,55 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 --------------------------------------------------------------------------------
 
 -- Open ML4W Sidebar widget
-hl.bind("SUPER + SHIFT + m", hl.dsp.exec_cmd("qs ipc call sidebar toggle"))
+hl.bind("SUPER + SHIFT + m", hl.dsp.exec_cmd("qs ipc call sidebar toggle"), { description = "toggle side bar" })
 
 -- Open ML4W Calendar widget
-hl.bind("SUPER + SHIFT + n", hl.dsp.exec_cmd("qs ipc call calendar toggle"))
+hl.bind("SUPER + SHIFT + n", hl.dsp.exec_cmd("qs ipc call calendar toggle"), { description = "show calendar" })
 
 -- Open Select Window Menu
-hl.bind("SUPER + Tab", hl.dsp.exec_cmd("qs -p ~/.local/share/quickshell-overview ipc call overview toggle"))
+hl.bind("SUPER + Tab", hl.dsp.exec_cmd("qs -p ~/.local/share/quickshell-overview ipc call overview toggle"), { description = "show overview" })
 
 -- Open theme switcher
-hl.bind("SUPER + SHIFT + s" , hl.dsp.exec_cmd("~/.config/waybar/themeswitcher.sh"))
+hl.bind("SUPER + SHIFT + t" , hl.dsp.exec_cmd("~/.config/ml4w/themes/themes.sh"), { description = "Open theme switcher" })
+hl.bind("SUPER + CTRL + t" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-toggle-theme"), { description = "toggle between light and dark mode" })
 
-hl.bind("SUPER + SHIFT + t" , hl.dsp.exec_cmd("~/.config/ml4w/themes/themes.sh"))
-hl.bind("SUPER + CTRL + t" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-toggle-theme"))
-
+-- Open waybar theme switcher
+hl.bind("SUPER + SHIFT + y" , hl.dsp.exec_cmd("~/.config/waybar/themeswitcher.sh"), { description = "Open waybar theme switcher" })
 
 -- Open clipboard manager
-hl.bind("SUPER + SHIFT + p" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-cliphist"))
-
-
---------------------------------------------------------------------------------
--- ## Keybindings / Keybind / Wallpaper
---------------------------------------------------------------------------------
-
-hl.bind("ALT + w" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-app --random"))
-hl.bind("ALT + CTRL + w" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-app"))
-hl.bind("SUPER + CTRL + w" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-wallpaper-automation"))
+hl.bind("SUPER + SHIFT + p" , hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-cliphist"), { description = "open clipboard manager" })
 
 
 
 
 --------------------------------------------------------------------------------
--- ## Keybindings / Keybind / Screenshot
+-- ## Keybindings / Keybind / Brightness
 --------------------------------------------------------------------------------
 
-hl.bind("PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh --instant"))
-hl.bind("ALT + PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"))
-hl.bind("CTRL + PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh --instant-area"))
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true, description = "brightness up" })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true, description = "brightness down" })
 
-hl.bind("ALT + SUPER + PRINT" , hl.dsp.exec_cmd("~/.config/hypr/scripts/text-extractor.sh"))
+
+
+
+--------------------------------------------------------------------------------
+-- ## Keybindings / Keybind / Volume
+--------------------------------------------------------------------------------
+
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true, description = "volume up" })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true, repeating = true, description = "volume down" })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true, repeating = true, description = "volume mute" })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true, repeating = true, description = "mic volume mute" })
+
+
+
+
+--------------------------------------------------------------------------------
+-- ## Keybindings / Keybind / Player
+--------------------------------------------------------------------------------
+
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true, description = "playerctl next" })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true, description = "playerctl play-pause" })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true, description = "playerctl play-pause" })
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true, description = "playerctl previous" })
+
