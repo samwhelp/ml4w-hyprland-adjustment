@@ -75,8 +75,12 @@ hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 --------------------------------------------------------------------------------
 
 -- Normal
-hl.bind("SUPER + Return", hl.dsp.exec_cmd("xfce4-terminal"))
-hl.bind("ALT + Return", hl.dsp.exec_cmd("xfce4-terminal"))
+
+hl.bind("SUPER + Return", hl.dsp.exec_cmd("~/.config/ml4w/settings/terminal.sh"))
+hl.bind("ALT + Return", hl.dsp.exec_cmd("~/.config/ml4w/settings/terminal.sh"))
+
+-- hl.bind("SUPER + Return", hl.dsp.exec_cmd("xfce4-terminal"))
+-- hl.bind("ALT + Return", hl.dsp.exec_cmd("xfce4-terminal"))
 
 hl.bind("ALT + SHIFT + a", hl.dsp.exec_cmd("xfce4-terminal"))
 hl.bind("ALT + CTRL + a", hl.dsp.exec_cmd("lxterminal"))
@@ -95,7 +99,9 @@ hl.bind("ALT + CTRL + t", hl.dsp.exec_cmd("kitty"))
 -- ## Keybindings / Keybind / Application / File Mainager
 --------------------------------------------------------------------------------
 
-hl.bind("ALT + SHIFT + f", hl.dsp.exec_cmd("thunar"))
+hl.bind("ALT + SHIFT + f", hl.dsp.exec_cmd("~/.config/ml4w/settings/filemanager"))
+
+--hl.bind("ALT + SHIFT + f", hl.dsp.exec_cmd("thunar"))
 hl.bind("ALT + SHIFT + g", hl.dsp.exec_cmd("pcmanfm"))
 
 
@@ -117,7 +123,9 @@ hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("mousepad"))
 -- ## Keybindings / Keybind / Application / Web Browser
 --------------------------------------------------------------------------------
 
-hl.bind("ALT + SHIFT + b", hl.dsp.exec_cmd("firefox --new-tab about:blank"))
+hl.bind("ALT + SHIFT + b", hl.dsp.exec_cmd("~/.config/ml4w/settings/browser.sh"))
+
+-- hl.bind("ALT + SHIFT + b", hl.dsp.exec_cmd("firefox --new-tab about:blank"))
 
 
 
