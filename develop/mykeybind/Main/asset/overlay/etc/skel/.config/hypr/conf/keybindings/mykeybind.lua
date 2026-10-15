@@ -413,3 +413,16 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+
+
+
+
+--------------------------------------------------------------------------------
+-- ## Keybindings / Keybind / Panel
+--------------------------------------------------------------------------------
+
+-- Open ML4W Sidebar widget
+hl.bind("SUPER + SHIFT + m", hl.dsp.exec_cmd("qs ipc call sidebar toggle"))
+
+-- Open ML4W Calendar widget
+hl.bind("SUPER + SHIFT + n", hl.dsp.exec_cmd("qs ipc call calendar toggle"))
