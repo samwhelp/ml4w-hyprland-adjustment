@@ -172,7 +172,8 @@ mod_config_install_home_config_hypr () {
 	local src_dir_path="${REF_BASE_DIR_PATH}/asset/overlay/etc/skel/.config/hypr"
 	local des_dir_path="${HOME}/.config/hypr"
 
-
+	
+	util_error_echo
 	util_error_echo "cp -rf ${src_dir_path}/. ${des_dir_path}/."
 	cp -rf "${src_dir_path}"/. "${des_dir_path}"/.
 
@@ -186,6 +187,21 @@ mod_config_install_home_config_ml4w () {
 	local des_dir_path="${HOME}/.config/ml4w"
 
 
+	util_error_echo
+	util_error_echo "cp -rf ${src_dir_path}/. ${des_dir_path}/."
+	cp -rf "${src_dir_path}"/. "${des_dir_path}"/.
+
+
+	return 0
+}
+
+mod_config_install_home_local_bin () {
+
+	local src_dir_path="${REF_BASE_DIR_PATH}/asset/overlay/etc/skel/.local/bin"
+	local des_dir_path="${HOME}/.local/bin"
+
+
+	util_error_echo
 	util_error_echo "cp -rf ${src_dir_path}/. ${des_dir_path}/."
 	cp -rf "${src_dir_path}"/. "${des_dir_path}"/.
 
@@ -200,6 +216,7 @@ model_config_install () {
 
 	mod_config_install_home_config_hypr
 	mod_config_install_home_config_ml4w
+	mod_config_install_home_local_bin
 
 
 	return 0

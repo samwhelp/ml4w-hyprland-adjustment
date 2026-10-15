@@ -76,17 +76,17 @@ hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 
 -- Normal
 
-hl.bind("SUPER + Return", hl.dsp.exec_cmd("~/.config/ml4w/settings/terminal.sh"))
-hl.bind("ALT + Return", hl.dsp.exec_cmd("~/.config/ml4w/settings/terminal.sh"))
+hl.bind("SUPER + Return", hl.dsp.exec_cmd("~/.config/ml4w/settings/terminal.sh"), { description = "open the terminal" })
+hl.bind("ALT + Return", hl.dsp.exec_cmd("~/.config/ml4w/settings/terminal.sh"), { description = "open the terminal" })
 
--- hl.bind("SUPER + Return", hl.dsp.exec_cmd("xfce4-terminal"))
--- hl.bind("ALT + Return", hl.dsp.exec_cmd("xfce4-terminal"))
+-- hl.bind("SUPER + Return", hl.dsp.exec_cmd("xfce4-terminal"), { description = "open the terminal" })
+-- hl.bind("ALT + Return", hl.dsp.exec_cmd("xfce4-terminal"), { description = "open the terminal" })
 
-hl.bind("ALT + SHIFT + a", hl.dsp.exec_cmd("xfce4-terminal"))
-hl.bind("ALT + CTRL + a", hl.dsp.exec_cmd("lxterminal"))
+hl.bind("ALT + SHIFT + a", hl.dsp.exec_cmd("xfce4-terminal"), { description = "open the terminal" })
+hl.bind("ALT + CTRL + a", hl.dsp.exec_cmd("lxterminal"), { description = "open the terminal" })
 
-hl.bind("ALT + SHIFT + t", hl.dsp.exec_cmd("kitty"))
-hl.bind("ALT + CTRL + t", hl.dsp.exec_cmd("kitty"))
+hl.bind("ALT + SHIFT + t", hl.dsp.exec_cmd("kitty"), { description = "open the terminal" })
+hl.bind("ALT + CTRL + t", hl.dsp.exec_cmd("kitty"), { description = "open the terminal" })
 
 
 -- Drop Down
@@ -99,11 +99,11 @@ hl.bind("ALT + CTRL + t", hl.dsp.exec_cmd("kitty"))
 -- ## Keybindings / Keybind / Application / File Mainager
 --------------------------------------------------------------------------------
 
-hl.bind("ALT + SHIFT + f", hl.dsp.exec_cmd("~/.config/ml4w/settings/filemanager"))
-hl.bind("ALT + SHIFT + g", hl.dsp.exec_cmd("thunar"))
+hl.bind("ALT + SHIFT + f", hl.dsp.exec_cmd("~/.config/ml4w/settings/filemanager"), { description = "open the file manager" })
+hl.bind("ALT + SHIFT + g", hl.dsp.exec_cmd("thunar"), { description = "open the file manager" })
 
--- hl.bind("ALT + SHIFT + f", hl.dsp.exec_cmd("thunar"))
--- hl.bind("ALT + SHIFT + g", hl.dsp.exec_cmd("pcmanfm"))
+-- hl.bind("ALT + SHIFT + f", hl.dsp.exec_cmd("thunar"), { description = "open the file manager" })
+-- hl.bind("ALT + SHIFT + g", hl.dsp.exec_cmd("pcmanfm"), { description = "open the file manager" })
 
 
 
@@ -112,12 +112,12 @@ hl.bind("ALT + SHIFT + g", hl.dsp.exec_cmd("thunar"))
 -- ## Keybindings / Keybind / Application / Text Editor
 --------------------------------------------------------------------------------
 
-hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("~/.config/ml4w/settings/editor.sh"))
+hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("~/.config/ml4w/settings/editor.sh"), { description = "open the text editor" })
 
--- hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("mousepad"))
--- hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("featherpad"))
--- hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("geany"))
--- hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("subl"))
+-- hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("mousepad"), { description = "open the text editor" })
+-- hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("featherpad"), { description = "open the text editor" })
+-- hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("geany"), { description = "open the text editor" })
+-- hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("subl"), { description = "open the text editor" })
 
 
 
@@ -126,9 +126,9 @@ hl.bind("ALT + SHIFT + e", hl.dsp.exec_cmd("~/.config/ml4w/settings/editor.sh"))
 -- ## Keybindings / Keybind / Application / Web Browser
 --------------------------------------------------------------------------------
 
-hl.bind("ALT + SHIFT + b", hl.dsp.exec_cmd("~/.config/ml4w/settings/browser.sh"))
+hl.bind("ALT + SHIFT + b", hl.dsp.exec_cmd("~/.config/ml4w/settings/browser.sh"), { description = "open the web browser" })
 
--- hl.bind("ALT + SHIFT + b", hl.dsp.exec_cmd("firefox --new-tab about:blank"))
+-- hl.bind("ALT + SHIFT + b", hl.dsp.exec_cmd("firefox --new-tab about:blank"), { description = "open the text editor" })
 
 
 
@@ -137,7 +137,7 @@ hl.bind("ALT + SHIFT + b", hl.dsp.exec_cmd("~/.config/ml4w/settings/browser.sh")
 -- ## Keybindings / Keybind / Application / System Settings
 --------------------------------------------------------------------------------
 
-hl.bind("ALT + SHIFT + s", hl.dsp.exec_cmd("nwg-look"))
+hl.bind("ALT + SHIFT + s", hl.dsp.exec_cmd("nwg-look"), { description = "look and feel settings" })
 
 
 
@@ -146,9 +146,9 @@ hl.bind("ALT + SHIFT + s", hl.dsp.exec_cmd("nwg-look"))
 -- ## Keybindings / Keybind / Application / Volume Control
 --------------------------------------------------------------------------------
 
--- hl.bind("ALT + SHIFT + v", hl.dsp.exec_cmd("mate-volume-control"))
-hl.bind("ALT + SHIFT + v", hl.dsp.exec_cmd("pavucontrol"))
--- hl.bind("ALT + SHIFT + v", hl.dsp.exec_cmd("pavucontrol-qt"))
+-- hl.bind("ALT + SHIFT + v", hl.dsp.exec_cmd("mate-volume-control"), { description = "open the volume control" })
+hl.bind("ALT + SHIFT + v", hl.dsp.exec_cmd("pavucontrol"), { description = "open the volume control" })
+-- hl.bind("ALT + SHIFT + v", hl.dsp.exec_cmd("pavucontrol-qt"), { description = "open the volume control" })
 
 
 
@@ -156,7 +156,7 @@ hl.bind("ALT + SHIFT + v", hl.dsp.exec_cmd("pavucontrol"))
 -- ## Keybindings / Keybind / Application / Network Settings
 --------------------------------------------------------------------------------
 
-hl.bind("ALT + SHIFT + n", hl.dsp.exec_cmd("kitty --class 'nmtui' --title 'Network Settings' nmtui"))
+hl.bind("ALT + SHIFT + n", hl.dsp.exec_cmd("kitty --class 'nmtui' --title 'Network Settings' nmtui"), { description = "open the nmtui" })
 
 
 
@@ -165,17 +165,17 @@ hl.bind("ALT + SHIFT + n", hl.dsp.exec_cmd("kitty --class 'nmtui' --title 'Netwo
 -- ## Keybindings / Keybind / Launcher
 --------------------------------------------------------------------------------
 
-hl.bind("ALT + F1", hl.dsp.exec_cmd("nwg-drawer -mb 10 -mr 10 -ml 10 -mt 10"))
--- hl.bind("ALT + F2", hl.dsp.exec_cmd("pkill wofi || wofi --normal-window --show drun --allow-images"))
--- hl.bind("ALT + F2", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"))
-
+hl.bind("ALT + F1", hl.dsp.exec_cmd("nwg-drawer -mb 10 -mr 10 -ml 10 -mt 10"), { description = "open application launcher" })
+-- hl.bind("ALT + F2", hl.dsp.exec_cmd("pkill wofi || wofi --normal-window --show drun --allow-images"), { description = "open application launcher" })
+-- hl.bind("ALT + F2", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"), { description = "open application launcher" })
 
 
 -- Open application launcher
-hl.bind("ALT + F2", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-launcher"))
+hl.bind("ALT + F2", hl.dsp.exec_cmd("~/.config/ml4w/scripts/ml4w-launcher"), { description = "open application launcher" })
+
 
 -- Show keybindings
-hl.bind("ALT + F3", hl.dsp.exec_cmd("~/.config/hypr/scripts/keybindings.sh"))
+hl.bind("ALT + F3", hl.dsp.exec_cmd("~/.config/hypr/scripts/keybindings.sh"), { description = "show keybindings" })
 
 
 
@@ -201,9 +201,9 @@ hl.bind("ALT + F3", hl.dsp.exec_cmd("~/.config/hypr/scripts/keybindings.sh"))
 -- ## Keybindings / Keybind / Launcher / Rofi
 --------------------------------------------------------------------------------
 
-hl.bind("ALT + SHIFT + d", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"))
-hl.bind("ALT + SHIFT + r", hl.dsp.exec_cmd("pkill rofi || rofi -show run"))
-hl.bind("ALT + SHIFT + w", hl.dsp.exec_cmd("pkill rofi || rofi -show window -show-icons"))
+hl.bind("ALT + SHIFT + d", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"), { description = "rofi -show drun" })
+hl.bind("ALT + SHIFT + r", hl.dsp.exec_cmd("pkill rofi || rofi -show run"), { description = "rofi -show run" })
+hl.bind("ALT + SHIFT + w", hl.dsp.exec_cmd("pkill rofi || rofi -show window -show-icons"), { description = "rofi -show window" })
 
 
 
@@ -219,17 +219,17 @@ hl.bind("ALT + CTRL + c", hl.dsp.exec_cmd("hyprctl reload"))
 
 
 -- Logout
-hl.bind("SUPER + SHIFT + x", hl.dsp.exec_cmd("ml4w-powermenu toggle"))
-hl.bind("SUPER + CTRL + x", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind("SUPER + SHIFT + x", hl.dsp.exec_cmd("ml4w-powermenu toggle"), { description = "toggle ml4w-powermenu" })
+hl.bind("SUPER + CTRL + x", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"), { description = "Logout" })
 
-hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("ml4w-powermenu toggle"))
--- hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("wlogout"))
-hl.bind("ALT + CTRL + x", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("ml4w-powermenu toggle"), { description = "toggle ml4w-powermenu" })
+-- hl.bind("ALT + SHIFT + x", hl.dsp.exec_cmd("wlogout"), { description = "show wlogout" })
+hl.bind("ALT + CTRL + x", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"), { description = "Logout" })
 
 
 -- Halt
-hl.bind("ALT + SHIFT + z", hl.dsp.exec_cmd("wlogout"))
-hl.bind("ALT + CTRL + z", hl.dsp.exec_cmd("systemctl -i poweroff"))
+hl.bind("ALT + SHIFT + z", hl.dsp.exec_cmd("wlogout"), { description = "show wlogout" })
+hl.bind("ALT + CTRL + z", hl.dsp.exec_cmd("systemctl -i poweroff"), { description = "Poweroff" })
 
 
 
@@ -246,21 +246,21 @@ hl.bind("ALT + CTRL + z", hl.dsp.exec_cmd("systemctl -i poweroff"))
 --------------------------------------------------------------------------------
 
 -- Window Close
-local closeWindowBind = hl.bind("SUPER + q", hl.dsp.window.close())
+local closeWindowBind = hl.bind("SUPER + q", hl.dsp.window.close(), { description = "window close" })
 -- closeWindowBind:set_enabled(false)
 
 
 -- Window Toggle Fullscreen
-hl.bind("SUPER + f", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
+hl.bind("SUPER + f", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }), { description = "window toggle fullscreen" })
 
--- Window Toggle Maximize
-hl.bind("SUPER + w", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
+-- Window Toggle Maximized
+hl.bind("SUPER + w", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }), { description = "window toggle maximized" })
 
 -- Window Toggle Floating
-hl.bind("SUPER + Escape", hl.dsp.window.float({ action = "toggle" }))
+hl.bind("SUPER + Escape", hl.dsp.window.float({ action = "toggle" }), { description = "window toggle floating" })
 
 -- Window Move Center
-hl.bind("SUPER + m", hl.dsp.window.center())
+hl.bind("SUPER + m", hl.dsp.window.center(), { description = "window move to screen center" })
 
 
 
@@ -270,16 +270,16 @@ hl.bind("SUPER + m", hl.dsp.window.center())
 --------------------------------------------------------------------------------
 
 -- Focus window with `Super + <Arrow Key>`
-hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }))
-hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
-hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
-hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
+hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }), { description = "focus up window" })
+hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }), { description = "focus down window" })
+hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }), { description = "focus left window" })
+hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }), { description = "focus right window" })
 
 -- Focus window with `Super + [k,j,h,l]`
-hl.bind("SUPER + k", hl.dsp.focus({ direction = "up" }))
-hl.bind("SUPER + j", hl.dsp.focus({ direction = "down" }))
-hl.bind("SUPER + h", hl.dsp.focus({ direction = "left" }))
-hl.bind("SUPER + l", hl.dsp.focus({ direction = "right" }))
+hl.bind("SUPER + k", hl.dsp.focus({ direction = "up" }), { description = "focus up window" })
+hl.bind("SUPER + j", hl.dsp.focus({ direction = "down" }), { description = "focus down window" })
+hl.bind("SUPER + h", hl.dsp.focus({ direction = "left" }), { description = "focus left window" })
+hl.bind("SUPER + l", hl.dsp.focus({ direction = "right" }), { description = "focus right window" })
 
 
 -- Focus window with `Super + [a,s]`
@@ -287,19 +287,19 @@ hl.bind("SUPER + a", function()
 	hl.dispatch(hl.dsp.window.cycle_next())
 	--hl.dispatch(hl.dsp.window.cycle_next({ next = false }))
 	hl.dispatch(hl.dsp.window.bring_to_top())
-end)
+end, { description = "focus previous window" })
 
 hl.bind("SUPER + s", function()
 	hl.dispatch(hl.dsp.window.cycle_next({ next = true }))
 	hl.dispatch(hl.dsp.window.bring_to_top())
-end)
+end, { description = "focus next window" })
 
 
 -- Focus master window on layout master
 hl.bind("SUPER + c", function()
 	hl.dispatch(hl.dsp.layout("focusmaster"))
 	hl.dispatch(hl.dsp.window.bring_to_top())
-end)
+end, { description = "focus master window" })
 
 -- hl.bind("SUPER + a", function()
 -- 	hl.dispatch(hl.dsp.layout("cycleprev"))
