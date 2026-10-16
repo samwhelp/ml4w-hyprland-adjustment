@@ -438,6 +438,10 @@ end
 hl.bind("ALT + grave", hl.dsp.layout("orientationprev"))
 hl.bind("ALT + Tab", hl.dsp.layout("orientationnext"))
 
+-- Master window number
+hl.bind("ALT + o", hl.dsp.layout("removemaster"))
+hl.bind("ALT + p", hl.dsp.layout("addmaster"))
+
 
 
 
