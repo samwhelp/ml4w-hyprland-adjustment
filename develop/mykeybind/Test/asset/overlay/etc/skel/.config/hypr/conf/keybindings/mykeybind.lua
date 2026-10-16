@@ -354,13 +354,25 @@ end, { description = "swap with master window" })
 
 
 --------------------------------------------------------------------------------
+-- ## Keybindings / Keybind / Window / Move
+--------------------------------------------------------------------------------
+
+hl.bind("SUPER + SHIFT + up", hl.dsp.window.move({ x = 0, y = -50, relative = true }), { repeating = true, description = "Move window up keyboard" })
+hl.bind("SUPER + SHIFT + down", hl.dsp.window.move({ x = 0, y = 50, relative = true }), { repeating = true, description = "Move window down with keyboard" })
+hl.bind("SUPER + SHIFT + left", hl.dsp.window.move({ x = -50, y = 0, relative = true }), { repeating = true, description = "Move window left with keyboard" })
+hl.bind("SUPER + SHIFT + right", hl.dsp.window.move({ x = 50, y = 0, relative = true }), { repeating = true, description = "Move window right with keyboard" })
+
+
+
+
+--------------------------------------------------------------------------------
 -- ## Keybindings / Keybind / Window / Resize
 --------------------------------------------------------------------------------
 
-hl.bind("SUPER + CTRL + up", hl.dsp.window.resize({ x = 0, y = -100, relative = true }), { repeating = true, description = "Reduce window height with keyboard" })
-hl.bind("SUPER + CTRL + down", hl.dsp.window.resize({ x = 0, y = 100, relative = true }), { repeating = true, description = "Increase window height with keyboard" })
-hl.bind("SUPER + CTRL + left", hl.dsp.window.resize({ x = -100, y = 0, relative = true }), { repeating = true, description = "Reduce window width with keyboard" })
-hl.bind("SUPER + CTRL + right", hl.dsp.window.resize({ x = 100, y = 0, relative = true }), { repeating = true, description = "Increase window width with keyboard" })
+hl.bind("SUPER + CTRL + up", hl.dsp.window.resize({ x = 0, y = -50, relative = true }), { repeating = true, description = "Reduce window height with keyboard" })
+hl.bind("SUPER + CTRL + down", hl.dsp.window.resize({ x = 0, y = 50, relative = true }), { repeating = true, description = "Increase window height with keyboard" })
+hl.bind("SUPER + CTRL + left", hl.dsp.window.resize({ x = -50, y = 0, relative = true }), { repeating = true, description = "Reduce window width with keyboard" })
+hl.bind("SUPER + CTRL + right", hl.dsp.window.resize({ x = 50, y = 0, relative = true }), { repeating = true, description = "Increase window width with keyboard" })
 
 
 
