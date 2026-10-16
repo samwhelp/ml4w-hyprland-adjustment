@@ -435,16 +435,8 @@ end
 --------------------------------------------------------------------------------
 
 -- Switch orientation on layout master with `ALT +[grave,Tab]`
-hl.bind("ALT + grave", function()
-	hl.dispatch(hl.dsp.layout("orientationprev"))
-	hl.dispatch(hl.dsp.window.bring_to_top())
-end)
-
-hl.bind("ALT + Tab", function()
-	hl.dispatch(hl.dsp.layout("orientationnext"))
-	hl.dispatch(hl.dsp.window.bring_to_top())
-end)
-
+hl.bind("ALT + grave", hl.dsp.layout("orientationprev"))
+hl.bind("ALT + Tab", hl.dsp.layout("orientationnext"))
 
 
 
